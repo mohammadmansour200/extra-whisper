@@ -2,7 +2,7 @@
 name = "extra-whisper"
 version = "0.1.0"
 description = "Extended faster-whisper with yt-dlp remote media transcription"
-authors = ["mohammadmansour200 <mohammadamansour03@gmail.com"]
+authors = ["mohammadmansour200 <mohammadamansour03@gmail.com>"]
 readme = "README.md"
 packages = [{include = "extra_whisper"}]
 

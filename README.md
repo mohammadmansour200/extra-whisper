@@ -1,7 +1,7 @@
 <div align="center">
   <a href="https://pypi.org/project/extra-whisper" target="_blank"><img src="https://img.shields.io/pypi/v/extra-whisper?label=PyPI%20Version&color=limegreen" /></a>
   <a href="https://pypi.org/project/extra-whisper" target="_blank"><img src="https://img.shields.io/pypi/pyversions/extra-whisper?color=limegreen" /></a>
-  <a href="https://github.com/mohammadmansour200/extra-whisper/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/pypi/l/extra-whisper?color=limegreen" /></a>
+  <a href="https://github.com/mohammadmansour200/extra-whisper/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/pypi/l/extra-whisper?color=limegreen" /></a>
   <a href="https://pepy.tech/project/extra-whisper" target="_blank"><img src="https://static.pepy.tech/badge/extra-whisper" /></a>
   <a href="https://baseet.netlify.app/ai" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
 </div>
