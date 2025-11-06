@@ -4,15 +4,13 @@ import shutil
 from typing import Optional
 
 import validators
-from faster_whisper import WhisperModel, BatchedInferencePipeline, format_timestamp
-from faster_whisper.vad import VadOptions
-
+from faster_whisper import WhisperModel, format_timestamp
 from extra_whisper.downloader import Downloader
 
 def extra_transcribe(
         files: list[str],
         output_dir: str,
-        model: str = "large-v3",
+        model: str = "large-v2",
         language: Optional[str] = None,
         task: str = "transcribe"
 ):
@@ -41,6 +39,8 @@ def extra_transcribe(
         )
     """
     abs_output_dir = os.path.abspath(output_dir)
+    os.makedirs(abs_output_dir, exist_ok=True)
+
     temp_output_dir = os.path.join(abs_output_dir, 'tmp')
 
     processing_files_path = []
@@ -89,27 +89,17 @@ def extra_transcribe(
             device="cuda",
             compute_type="float16",
     )
-    batched_model = BatchedInferencePipeline(model=whisper_model)
 
     # Process each file with batching
     for file_path in processing_files_path:
         print(f"Transcribing {file_path}...")
 
-        vad_options = VadOptions(
-            max_speech_duration_s=12,
-            min_silence_duration_ms=500,
-            speech_pad_ms=300,
-            threshold=0.5
-        )
-        segments, info = batched_model.transcribe(
+        segments, info = whisper_model.transcribe(
             file_path,
-            batch_size=8,
             beam_size=5,
             language=language,
             log_progress=True,
             task=task,
-            vad_filter=True,
-            vad_parameters=vad_options
         )
 
         base_name = os.path.splitext(os.path.basename(file_path))[0]
@@ -131,4 +121,3 @@ def extra_transcribe(
     # --- Cleanup ---
     if os.path.exists(temp_output_dir):
         shutil.rmtree(temp_output_dir)
-
