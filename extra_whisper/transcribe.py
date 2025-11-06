@@ -11,7 +11,8 @@ def extra_transcribe(
         files: list[str],
         output_dir: str,
         model: str = "large-v3",
-        language: Optional[str] = None
+        language: Optional[str] = None,
+        task: str = "transcribe"
 ):
     """
     Transcripts the list of media files (audio/video), using faster-whisper.
@@ -25,7 +26,9 @@ def extra_transcribe(
         files (list[str]): List of file paths or URLs pointing to audio/video files.
         output_dir (str): Path to directory where final results will be saved.
         model (str): Model to be used
-        language (str): Speech language
+        language (Optional[str]): Speech language code (e.g., "ar", "en").
+                                   If None, language will be auto-detected.
+        task (str): Either "transcribe" or "translate" (default: "transcribe")
 
     Example:
         extra_transcribe(
@@ -60,7 +63,15 @@ def extra_transcribe(
             processing_files_path.append(os.path.abspath(url))
 
     # --- model inference ---
-    whisper_model = WhisperModel(model, device="cuda", compute_type="float16")
+    whisper_model = WhisperModel(
+            model,
+            device="cuda",
+            compute_type="float16",
+            max_speech_duration_s=12,
+            min_silence_duration_ms=500,
+            speech_pad_ms=300,
+            threshold=0.5
+    )
     batched_model = BatchedInferencePipeline(model=whisper_model)
 
     # Process each file with batching
@@ -71,7 +82,9 @@ def extra_transcribe(
             file_path,
             batch_size=8,
             beam_size=5,
-            language=language
+            language=language,
+            log_progress=True,
+            task=task,
         )
 
         base_name = os.path.splitext(os.path.basename(file_path))[0]
