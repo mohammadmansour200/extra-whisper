@@ -1,9 +1,11 @@
+import logging
 import os
 import shutil
 from typing import Optional
 
 import validators
 from faster_whisper import WhisperModel, BatchedInferencePipeline, format_timestamp
+from faster_whisper.vad import VadOptions
 
 from extra_whisper.downloader import Downloader
 
@@ -42,6 +44,7 @@ def extra_transcribe(
     temp_output_dir = os.path.join(abs_output_dir, 'tmp')
 
     processing_files_path = []
+    failed_urls = []
 
     # --- Preparing files for processing ---
     print("Preparing files...")
@@ -53,24 +56,38 @@ def extra_transcribe(
         output_dir=temp_output_dir,
     )
     for index, url in enumerate(files):
+        if not isinstance(url, str):
+            logging.warning(f"Item at index {index} is not a string, skipping.")
+            continue
+
         is_url = validators.url(url)
+
         if is_url:
             downloaded_file_name = downloader.download(url=url)
-            downloaded_file_path = os.path.join(temp_output_dir, downloaded_file_name)
 
-            processing_files_path.append(downloaded_file_path)
+            if downloaded_file_name:
+                downloaded_file_path = os.path.join(temp_output_dir, downloaded_file_name)
+                processing_files_path.append(downloaded_file_path)
+            else:
+                failed_urls.append(url)
         else:
             processing_files_path.append(os.path.abspath(url))
+
+    if not processing_files_path:
+        raise ValueError(
+            f"Processing failed. No valid files or URLs were found or successfully downloaded from the {len(files)} provided inputs.")
+
+    if failed_urls:
+        logging.warning(f"Failed to download {len(failed_urls)} URLs: {failed_urls}")
+
+    # Now you can safely continue, knowing processing_files_path is not empty
+    print(f"Successfully processed {len(processing_files_path)} files.")
 
     # --- model inference ---
     whisper_model = WhisperModel(
             model,
             device="cuda",
             compute_type="float16",
-            max_speech_duration_s=12,
-            min_silence_duration_ms=500,
-            speech_pad_ms=300,
-            threshold=0.5
     )
     batched_model = BatchedInferencePipeline(model=whisper_model)
 
@@ -78,6 +95,12 @@ def extra_transcribe(
     for file_path in processing_files_path:
         print(f"Transcribing {file_path}...")
 
+        vad_options = VadOptions(
+            max_speech_duration_s=12,
+            min_silence_duration_ms=500,
+            speech_pad_ms=300,
+            threshold=0.5
+        )
         segments, info = batched_model.transcribe(
             file_path,
             batch_size=8,
@@ -85,6 +108,8 @@ def extra_transcribe(
             language=language,
             log_progress=True,
             task=task,
+            vad_filter=True,
+            vad_parameters=vad_options
         )
 
         base_name = os.path.splitext(os.path.basename(file_path))[0]
