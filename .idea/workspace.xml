@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="342082bf-0e9b-4f12-8a37-f30309ff3173" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/whisper-extra.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra_whisper/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra_whisper/downloader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extra_whisper/transcribe.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poetry.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    <list default="true" id="342082bf-0e9b-4f12-8a37-f30309ff3173" name="Changes" comment="docs: Improvements and typo corrections in readme + renamed nb for potential en version">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extra_whisper/transcribe.py" beforeDir="false" afterPath="$PROJECT_DIR$/extra_whisper/transcribe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poetry.lock" beforeDir="false" afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,29 +18,76 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mohammadmansour200&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mohammadmansour200/extra-whisper.git&quot;,
+    &quot;accountId&quot;: &quot;0f8dfcb2-82ea-4503-ab65-8005ef47f340&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="356O4aQUpn4QVKXQWxfpzhYKzwV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/mohammad/PycharmProjects/whisper-extra/extra_whisper"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.transcribe.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/mohammad/PycharmProjects/whisper-extra/extra_whisper&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/extra_whisper" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="transcribe" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="whisper-extra" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/extra_whisper" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/extra_whisper/transcribe.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.transcribe" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -66,6 +104,100 @@
       <option name="presentableId" value="Default" />
       <updated>1762426865436</updated>
     </task>
+    <task id="LOCAL-00001" summary="build: Add description to package">
+      <option name="closed" value="true" />
+      <created>1762431466666</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1762431466666</updated>
+    </task>
+    <task id="LOCAL-00002" summary="build: Install the right poetry package version">
+      <option name="closed" value="true" />
+      <created>1762431498734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762431498734</updated>
+    </task>
+    <task id="LOCAL-00003" summary="docs: Fixed some typos">
+      <option name="closed" value="true" />
+      <created>1762431734815</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762431734815</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: added minor features">
+      <option name="closed" value="true" />
+      <created>1762433736017</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762433736017</updated>
+    </task>
+    <task id="LOCAL-00005" summary="docs: Added nb for colab inference">
+      <option name="closed" value="true" />
+      <created>1762433760019</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762433760019</updated>
+    </task>
+    <task id="LOCAL-00006" summary="docs: fixed typo in colab nb url">
+      <option name="closed" value="true" />
+      <created>1762433835614</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762433835615</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: More robust error handling">
+      <option name="closed" value="true" />
+      <created>1762437490582</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762437490582</updated>
+    </task>
+    <task id="LOCAL-00008" summary="build: Bump version">
+      <option name="closed" value="true" />
+      <created>1762437524421</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762437524421</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: Fixed minor bugs">
+      <option name="closed" value="true" />
+      <created>1762451223088</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762451223088</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docs: Improvements and typo corrections in readme + renamed nb for potential en version">
+      <option name="closed" value="true" />
+      <created>1762451984919</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762451984919</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="build: Add description to package" />
+    <MESSAGE value="build: Install the right poetry package version" />
+    <MESSAGE value="docs: Fixed some typos" />
+    <MESSAGE value="feat: added minor features" />
+    <MESSAGE value="docs: Added nb for colab inference" />
+    <MESSAGE value="docs: fixed typo in colab nb url" />
+    <MESSAGE value="fix: More robust error handling" />
+    <MESSAGE value="build: Bump version" />
+    <MESSAGE value="fix: Fixed minor bugs" />
+    <MESSAGE value="docs: Improvements and typo corrections in readme + renamed nb for potential en version" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: Improvements and typo corrections in readme + renamed nb for potential en version" />
   </component>
 </project>

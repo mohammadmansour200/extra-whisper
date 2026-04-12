@@ -5,6 +5,8 @@ from typing import Optional
 
 import validators
 from faster_whisper import WhisperModel, format_timestamp
+from faster_whisper.vad import VadOptions
+
 from extra_whisper.downloader import Downloader
 
 def extra_transcribe(
@@ -90,15 +92,27 @@ def extra_transcribe(
             compute_type="float16",
     )
 
+    chunk_length = whisper_model.feature_extractor.chunk_length
+    vad_kw: dict = {
+        "max_speech_duration_s": chunk_length,
+        "min_silence_duration_ms": 500,
+        "speech_pad_ms": 200,
+        "threshold": 0.35,
+    }
+
+    vad_params = VadOptions(**vad_kw)
+
     # Process each file with batching
     for file_path in processing_files_path:
         print(f"Transcribing {file_path}...")
 
         segments, info = whisper_model.transcribe(
             file_path,
+            vad_parameters=vad_params,
             beam_size=5,
             language=language,
             log_progress=True,
+            vad_filter=True,
             task=task,
         )
 
